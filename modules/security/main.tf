@@ -2,6 +2,7 @@
 resource "aws_security_group" "public_security_group_module" {
   name = "public_security_group_module"
   description = "Public security group for test module"
+  vpc_id = var.vpc_id
 
   ingress {
     from_port = 443
@@ -36,7 +37,8 @@ resource "aws_security_group" "public_security_group_module" {
 resource "aws_security_group" "private_security_group_module" {
   name = "private_security_group_module"
   description = "Private security group for test module"
-
+  vpc_id = var.vpc_id
+  
   ingress {
     from_port = 3306
     to_port = 3306

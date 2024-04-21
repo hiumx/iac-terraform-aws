@@ -6,7 +6,6 @@ variable "region" {
 variable "ami" {
   type = string
   description = "The amazon machine image to use for server"
-  default = "ami-06c4be2792f419b7b"
 }
 
 variable "instance_type" {
@@ -23,5 +22,11 @@ variable "key_name" {
 
 variable "security_group_ids" {
   type = list(string)
+  nullable = false
+}
+
+variable "subnet_id" {
+  type = string
+  description = "The subnet ID to launch in"
   nullable = false
 }
